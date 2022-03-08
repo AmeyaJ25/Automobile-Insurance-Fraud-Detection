@@ -1,0 +1,125 @@
+{% extends 'basecus.html' %}
+{% block header %} Home{% endblock header %}
+{% block body %}
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<style>
+        img {
+    width: 100%;
+    height: 100%
+}
+
+.bg-black {
+    background: #000
+}
+
+.skill-block {
+    width: 30%
+}
+
+@media (min-width: 991px) and (max-width:1200px) {
+    .skill-block {
+        padding: 32px !important
+    }
+}
+
+@media (min-width: 1200px) {
+    .skill-block {
+        padding: 56px !important
+    }
+}
+
+body {
+    background-color: #eeeeee
+}
+.skill-block {
+    padding: 25px 18px !important;
+}
+.aj{
+    color: black;
+    /* text-shadow: 2px 2px; */
+    text-shadow: 1px 1px 3px #2b00fa;
+}
+    </style>
+<!-- <div>
+    <div>
+        hello {{usrname}}{{pass1}}
+    </div>
+</div> -->
+<div class="container mt-5 mb-5">
+    <div class="row no-gutters">
+        {% if "Male" in info.Gender %}
+        <div class="col-md-4 col-lg-4"><img class="rounded-circle" src="{{url_for('static',filename='male.png')}}"></div>
+        {% else %}
+        <div class="col-md-4 col-lg-4"><img class="rounded-circle" src="{{url_for('static',filename='female.png')}}"></div>
+        {% endif %}
+        <div class="col-md-8 col-lg-8">
+            <div class="d-flex flex-column">
+                <div class="d-flex flex-row justify-content-between align-items-center p-5 bg-dark text-white">
+                    <h3 class="display5">Welcome {{info.name}}</h3>
+                </div>
+                <div class="d-flex flex-row text-white" style="background-color: aqua;">
+                    <div class="p-4 text-center skill-block aj">Age</div>
+                    <div class="p-4 text-center skill-block aj">No of cars</div>
+                    <div class="p-4 text-center skill-block aj">Past no of claims</div>
+                    <div class="p-4 text-center skill-block aj">date of birth</div>
+                    <h6> &nbsp;</h6>
+                </div>
+                <table class="table table-dark">
+<!-- <thead>
+<tr>
+  <th scope="col">#</th>
+  <th scope="col">First</th>
+  <th scope="col">Last</th>
+  <th scope="col">Handle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <th scope="row">1</th>
+  <td>Mark</td>
+  <td>Otto</td>
+  <td>@mdo</td>
+</tr>
+<tr>
+  <th scope="row">2</th>
+  <td>Jacob</td>
+  <td>Thornton</td>
+  <td>@fat</td>
+</tr>
+<tr>
+  <th scope="row">3</th>
+  <td>Larry</td>
+  <td>the Bird</td>
+  <td>@twitter</td>
+</tr>
+</tbody>
+</table> -->
+                <div class="d-flex flex-row text-white">
+                    <div class="p-4 text-center skill-block" style="background-color: #22262a;color: aqua;">
+                        <h4>{{info.age}}</h4>
+                        
+                    </div>
+                    <div class="p-3 text-center skill-block" style="background-color: #22262a;color: aqua;">
+                        <h4>{{carno}}</h4>
+                        
+                    </div>
+                    <div class="p-3 text-center skill-block" style="background-color: #22262a;color: aqua;">
+                        <h4>{{pclaim}}</h4>
+                        
+                    </div>
+                    <div class="p-3 text-center skill-block" style="background-color: #22262a;color: aqua;">
+                        <h4>{{info.dob}}</h4>
+                        
+                    </div>
+                    <!-- <div class="p-3 bg-danger text-center skill-block">
+                        <h4>75%</h4>
+                        <h6>PHP</h6>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
