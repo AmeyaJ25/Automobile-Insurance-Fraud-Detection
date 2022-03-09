@@ -41,9 +41,9 @@
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 100%;
-    margin: 0 auto;
+    margin: auto;
     position: relative;
   }
 
@@ -85,17 +85,25 @@
   }
 </style>
 <br>
-<div class="container" style=" margin: 0;
+<!-- <div class="container" style=" margin: 0;
   position: absolute;
+  left: 50%;
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);  
-   ">
-  <div class="con1" style="margin-left: 5%; margin-right: 4%;">
-    <table class="table  table-hover" style="background-color:white;">
-      <thead>
+   "> -->
+   <div class="container" style="  margin: 0;
+   position: absolute;
+   top: 50%;
+   left: 48%;
+   -ms-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+    ">
+  <div >
+    <table class="table  table-hover" style="background-color:white; overflow-x: auto;">
+      <thead >
         <tr>
-          <th scope="col" style="padding-left: 2%;">SrNo.</th>
+          <th scope="col" style="padding-left: 2%;border-top-left-radius: 10px;">SrNo.</th>
           <th scope="col">Email ID</th>
           <th scope="col">Date of Accident</th>
           <!-- <th scope="col">Gender</th> -->
@@ -104,8 +112,8 @@
           <th scope="col">Police Report Filed</th>
           <th scope="col">Witness Present</th>
           <th scope="col">Fault</th>
-          <th scope="col">Number of Cars involved in Accident</th>
-          <th scope="col">Model Prediction</th>
+          <th scope="col">Number of Cars <br>involved in Accident</th>
+          <th scope="col" style="border-top-right-radius: 10px;">Model Prediction</th>
         </tr>
       </thead>
       <tbody>
@@ -122,7 +130,7 @@
           <td>{{alldata.marriedstatus}}</td>
           <td>{{alldata.fault}}</td>
           <td>{{alldata.noofcars}}</td>
-          <td>{{alldata.prediction}}</td>
+          <td >{{alldata.prediction}}</td>
         </tr>
         {% endfor %}
         <!-- {% for alldata in v3 %}

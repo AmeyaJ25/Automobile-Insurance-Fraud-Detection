@@ -50,9 +50,6 @@ class Policy(db.Model):
     no = db.Column(db.Integer, primary_key=True,autoincrement=True)
     carno=db.Column(db.String(12), nullable=False)
     email = db.Column(db.String(120), nullable=False)
-    #Remove Date#Update Policy
-    #date=db.Column(db.String(10), nullable=False)
-    #tclaim=db.Column(db.Integer, nullable=False)
     vcat=db.Column(db.String(20), nullable=False)
     vprice=db.Column(db.String(20), nullable=False)
     agtype=db.Column(db.String(20), nullable=False)
@@ -66,7 +63,6 @@ class Claim(db.Model):
     carno1 = db.Column(db.String(12),primary_key=True, nullable=False)
     email=db.Column(db.String(120), nullable=False)
     dateacc=db.Column(db.String(15), nullable=False)
-    # gender=db.Column(db.String(15), nullable=False)
     area=db.Column(db.String(15), nullable=False)
     marriedstatus=db.Column(db.String(15), nullable=False)
     reportfiled=db.Column(db.String(15), nullable=False)
@@ -566,7 +562,12 @@ def addclaim():
             p18=request.form["daypolicycla"] #19
             dayclaim=p18
             p18=Days_Policy_Claim[p18]
-            p19=quser.pastnoofclaim #20
+            n=quser.pastnoofclaim
+            p19=n #20
+            n+=1
+            quser.pastnoofclaim=n
+            db.session.add(quser)
+            db.session.commit()
             p20=q.vage #21
             p20=AgeOfVehicle[p20]
             p21=PoliceReportFiled[repofiled] #22

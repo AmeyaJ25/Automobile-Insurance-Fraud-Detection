@@ -30,15 +30,19 @@
 }
 
 body {
-    background-color: #eeeeee
+    height: 100vh;
+    background-image: linear-gradient(to right bottom, #1652f8, #006be5, #00a3d5, #004dae, #11076e);
 }
 .skill-block {
     padding: 25px 18px !important;
 }
 .aj{
     color: black;
-    /* text-shadow: 2px 2px; */
-    text-shadow: 1px 1px 3px #2b00fa;
+    /* text-shadow: 2px 2px;
+    text-shadow: 1px 1px 3px #2b00fa; */
+}
+.mt-5{
+    margin-top: 20vh !important;
 }
     </style>
 <!-- <div>
@@ -58,7 +62,7 @@ body {
                 <div class="d-flex flex-row justify-content-between align-items-center p-5 bg-dark text-white">
                     <h3 class="display5">Welcome {{info.name}}</h3>
                 </div>
-                <div class="d-flex flex-row text-white" style="background-color: aqua;">
+                <div class="d-flex flex-row text-white" style="background-color: white;">
                     <div class="p-4 text-center skill-block aj">Age</div>
                     <div class="p-4 text-center skill-block aj">No of cars</div>
                     <div class="p-4 text-center skill-block aj">Past no of claims</div>
@@ -96,19 +100,19 @@ body {
 </tbody>
 </table> -->
                 <div class="d-flex flex-row text-white">
-                    <div class="p-4 text-center skill-block" style="background-color: #22262a;color: aqua;">
+                    <div class="p-4 text-center skill-block" style="background-color: #22262a;color: rgb(255, 255, 255);">
                         <h4>{{info.age}}</h4>
                         
                     </div>
-                    <div class="p-3 text-center skill-block" style="background-color: #22262a;color: aqua;">
+                    <div class="p-3 text-center skill-block" style="background-color: #22262a;color: rgb(255, 255, 255);">
                         <h4>{{carno}}</h4>
                         
                     </div>
-                    <div class="p-3 text-center skill-block" style="background-color: #22262a;color: aqua;">
+                    <div class="p-3 text-center skill-block" style="background-color: #22262a;color: rgb(255, 255, 255);">
                         <h4>{{pclaim}}</h4>
                         
                     </div>
-                    <div class="p-3 text-center skill-block" style="background-color: #22262a;color: aqua;">
+                    <div class="p-3 text-center skill-block" style="background-color: #22262a;color: rgb(255, 255, 255);">
                         <h4>{{info.dob}}</h4>
                         
                     </div>
